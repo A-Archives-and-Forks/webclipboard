@@ -25,21 +25,21 @@
         }
 
         #image-toggle-btn {
-            width: 44px;
-            height: 44px;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
+            width: 40px;
+            height: 40px;
+            background: #fafafa;
+            color: rgb(86, 86, 86);
+            border: none;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 22px;
+            transition: all 0.3s ease;
+            font-size: 20px;
             user-select: none;
             position: relative; /* 为角标提供基准 */
+            z-index: 1000;
         }
 
         #image-badge {
@@ -153,9 +153,8 @@
 
         /* 深色模式适配 */
         #note-image-wrapper.dark-mode #image-toggle-btn {
-            background: rgba(40, 40, 40, 0.8);
-            color: #eee;
-            border-color: rgba(255, 255, 255, 0.1);
+            background-color: #444;
+            color: #fff;
         }
 
         #note-image-wrapper.dark-mode #image-container {
@@ -265,7 +264,7 @@
 
     const imageBtn = document.createElement('div');
     imageBtn.id = 'image-toggle-btn';
-    imageBtn.innerText = '🖼️';
+    imageBtn.innerHTML = '<i class="fas fa-image"></i>';
     imageBtn.title = '载入当前文件对应图片';
 
     const badge = document.createElement('div');

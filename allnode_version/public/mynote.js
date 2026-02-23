@@ -29,32 +29,29 @@
         }
 
         #calendar-toggle-btn {
-            width: 44px;
-            height: 44px;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
+            width: 40px;
+            height: 40px;
+            background: #fafafa;
+            color: rgb(86, 86, 86);
+            border: none;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 22px;
+            transition: all 0.3s ease;
+            font-size: 20px;
             user-select: none;
+            z-index: 1000;
         }
 
         #calendar-toggle-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-            background: #fff;
+            transform: scale(1.1);
         }
 
         #calendar-toggle-btn.active {
-            background: #2575fc;
-            color: white;
-            border-color: #2575fc;
+            background: #eee;
+            color: #2575fc;
         }
 
         #calendar-container {
@@ -187,9 +184,8 @@
 
         /* --- 深色模式样式 --- */
         #note-calendar-wrapper.dark-mode #calendar-toggle-btn {
-            background: rgba(40, 40, 40, 0.8);
-            color: #eee;
-            border-color: rgba(255, 255, 255, 0.1);
+            background-color: #444;
+            color: #fff;
         }
 
         #note-calendar-wrapper.dark-mode #calendar-container {
@@ -379,7 +375,7 @@
 
     const toggleBtn = document.createElement('div');
     toggleBtn.id = 'calendar-toggle-btn';
-    toggleBtn.innerText = '📅';
+    toggleBtn.innerHTML = '<i class="fas fa-calendar-alt"></i>';
     toggleBtn.title = '打开/关闭日历';
 
     const calContainer = document.createElement('div');
